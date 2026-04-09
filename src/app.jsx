@@ -8,7 +8,7 @@ import Home from './pages/Home';
 function App() {
   return (
     <QueryClientProvider client={queryClientInstance}>
-      <Router>
+      <Router basename="/MyFirstPersonalSite">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<PageNotFound />} />
