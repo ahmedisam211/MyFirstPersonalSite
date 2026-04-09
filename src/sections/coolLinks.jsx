@@ -22,40 +22,44 @@ const tagColors = {
   fun: 'text-neon-lime',
 };
 
-export default function CoolLinks() {
+export default function CoolLinks( ) {
   return (
     <section id="links" className="relative px-6 md:px-10 py-24 md:py-32">
-      <SectionHeading color="text-neon-violet">Cool Links</SectionHeading>
+      <SectionHeading color="text-neon-cyan">Cool Links</SectionHeading>
 
-             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+      {/* Removed mx-auto and max-w-4xl to align left */}
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
         {LINKS.map((link, i) => (
           <motion.a
             key={link.title}
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.06 }}
-            whileHover={{ x: -8 }}
-            className="group flex items-center gap-4 md:gap-6 py-4 px-4 md:px-6 rounded-lg hover:bg-card/50 transition-colors"
-            data-hoverable
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="group block p-6 border border-ash/10 hover:border-neon-cyan/30 hover:bg-ash/5 transition-all"
           >
-            <span className={`font-mono text-[10px] tracking-wider uppercase ${tagColors[link.tag] || 'text-muted-foreground'} w-16 shrink-0`}>
+            <span className={`inline-block px-2 py-0.5 text-[10px] uppercase tracking-widest border border-current mb-4 ${tagColors[link.tag] || 'text-ash/40'}`}>
               {link.tag}
             </span>
 
-            <div className="flex-1 min-w-0">
-              <h3 className="text-base md:text-lg font-medium text-foreground group-hover:text-white transition-colors truncate">
-                {link.title}
-              </h3>
-              <p className="font-mono text-[10px] md:text-xs text-muted-foreground italic">
+            <div className="space-y-1">
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-medium text-ash group-hover:text-white transition-colors">
+                  {link.title}
+                </h3>
+                <ExternalLink className="w-4 h-4 text-ash/20 group-hover:text-neon-cyan transition-colors" />
+              </div>
+              <p className="text-sm text-ash/40 leading-relaxed">
                 {link.note}
               </p>
             </div>
 
-            <ExternalLink size={14} className="text-muted-foreground group-hover:text-neon-cyan transition-colors shrink-0" />
+            <div className="mt-6 flex justify-end">
+              <div className="w-8 h-px bg-ash/10 group-hover:w-12 group-hover:bg-neon-cyan transition-all" />
+            </div>
           </motion.a>
         ))}
       </div>
