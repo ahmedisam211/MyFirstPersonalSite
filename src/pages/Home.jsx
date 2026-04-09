@@ -1,6 +1,6 @@
 import NoiseOverlay from '../components/Noiseoverlay';
 import CustomCursor from '../components/CustomcCursor';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navbar';
 import ProgressBar from '../components/ProgressBar';
 import Hero from '../sections/Hero';
 import Projects from '../sections/Projects';
