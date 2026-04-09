@@ -1,5 +1,5 @@
 import SectionHeading from '../components/SectionHeading';
-import ProjectCard from '../components/ProjectCard';
+import ProjectCard from '../components/Projectcard';
 
 const PROJECTS = [
   { title: 'Liquid Dimensions', category: 'Digital Art', image: 'https://media.base44.com/images/public/69d7a4a08ccfaa93b4238ed5/1ede7c976_generated_b5f484a8.png' },
