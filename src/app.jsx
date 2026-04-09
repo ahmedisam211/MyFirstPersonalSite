@@ -8,7 +8,7 @@ import Home from './pages/Home';
 function App() {
   return (
     <QueryClientProvider client={queryClientInstance}>
-      <Router basename="/MyFirstPersonalSite">
+      <Router >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<PageNotFound />} />
@@ -20,3 +20,4 @@ function App() {
 }
 
 export default App
+//basename="/MyFirstPersonalSite"
