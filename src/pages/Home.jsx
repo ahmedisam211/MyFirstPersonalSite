@@ -1,12 +1,12 @@
 import NoiseOverlay from '../components/Noiseoverlay';
-import CustomCursor from '../components/customcursor';
-import Navbar from '../components/navbar';
-import ProgressBar from '../components/Progressbar';
+import CustomCursor from '../components/CustomcCursor';
+import Navbar from '../components/Navbar';
+import ProgressBar from '../components/ProgressBar';
 import Hero from '../sections/Hero';
-import Projects from '../sections/projects';
-import Songs from '../sections/songs';
-import Poems from '../sections/poems';
-import CoolLinks from '../sections/coolLinks';
+import Projects from '../sections/Projects';
+import Songs from '../sections/Songs';
+import Poems from '../sections/Poems';
+import CoolLinks from '../sections/CoolLinks';
 import Contact from '../sections/Contact';
 
 export default function Home() {
