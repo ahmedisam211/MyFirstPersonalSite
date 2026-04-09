@@ -7,7 +7,7 @@ import Projects from '../sections/projects';
 import Songs from '../sections/songs';
 import Poems from '../sections/poems';
 import CoolLinks from '../sections/coolLinks';
-import Contact from '../sections/contact';
+import Contact from '../sections/Contact';
 
 export default function Home() {
   return (
