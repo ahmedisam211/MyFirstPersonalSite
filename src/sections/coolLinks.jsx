@@ -25,9 +25,9 @@ const tagColors = {
 export default function CoolLinks() {
   return (
     <section id="links" className="relative px-6 md:px-10 py-24 md:py-32">
-      <SectionHeading color="text-neon-violet" align="right">Cool Links</SectionHeading>
+      <SectionHeading color="text-neon-violet">Cool Links</SectionHeading>
 
-      <div className="max-w-4xl ml-auto space-y-2">
+             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
         {LINKS.map((link, i) => (
           <motion.a
             key={link.title}
