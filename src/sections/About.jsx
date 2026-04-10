@@ -8,7 +8,7 @@ export default function About() {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-neon-cyan/5 to-transparent pointer-events-none" />
       
       <div className="max-w-6xl mx-auto">
-        <SectionHeading color="text-neon-cyan">About</SectionHeading>
+        <SectionHeading color="text-neon-cyan">About me</SectionHeading>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Text Content */}
@@ -20,13 +20,13 @@ export default function About() {
             className="space-y-6 text-ash/80 font-sans text-lg md:text-xl leading-relaxed"
           >
             <p>
-              I am <span className="text-white font-bold">Ahmed Isam</span>, a digital creator exploring the intersection of technology and art. My work spans across software development, visual design, and poetic expression.
+              I am <span className="text-white font-bold">Ahmed Isam</span>, a teenager exploring the intersection of technology and art. My work spans across software development, visual design, and poetic expression.
             </p>
             <p>
               Driven by a fascination with how code can manifest as emotion, I build digital experiences that are not just functional, but resonant. Whether it's through a line of code, a verse of poetry, or a visual composition, I strive to create moments of connection in the digital void.
             </p>
             <div className="pt-4 flex flex-wrap gap-4">
-              {['React', 'Tailwind', 'Framer Motion', 'UI/UX', 'Creative Coding'].map((skill) => (
+              {['Sudanese', 'not a developer', 'i try to code', 'CAD', 'Robotics', 'Music'].map((skill) => (
                 <span 
                   key={skill}
                   className="px-3 py-1 border border-neon-cyan/30 rounded-full text-xs font-mono text-neon-cyan uppercase tracking-widest bg-neon-cyan/5"
@@ -49,7 +49,7 @@ export default function About() {
             <div className="relative border border-white/10 bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-2xl overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-neon-cyan" />
               <blockquote className="font-mono text-sm md:text-base italic text-ash/60 space-y-4">
-                <p>"Code is the ink, the screen is the paper, and the logic is the rhythm of the soul."</p>
+                <p>" When you heat stuff, It becomes HOT, like really hot.. dont touch it."</p>
                 <footer className="text-neon-cyan not-italic">— Ahmed Isam</footer>
               </blockquote>
               

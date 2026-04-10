@@ -165,7 +165,7 @@ export default function Songs() {
   return (
     <section id="songs" className="relative px-6 md:px-10 py-24 md:py-32">
       <SectionHeading color="text-neon-magenta">Songs</SectionHeading>
-
+          <p>songs you should listn to</p>
       {/* Removed max-w-4xl and mx-auto to align left */}
       <div className="mt-12 w-full max-w-5xl">
         {SONGS.map((song, i) => (

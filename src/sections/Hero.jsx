@@ -5,7 +5,7 @@ const HERO_IMAGE = 'https://media.base44.com/images/public/69d7a4a08ccfaa93b4238
 
 const poeticFragments = [
   { text: 'somewhere between', x: '5%', y: '25%', delay: 0.6 },
-  { text: 'code & canvas,', x: '60%', y: '40%', delay: 0.9 },
+  { text: 'code & canvas,', x: '75%', y: '35%', delay: 0.9 },
   { text: 'there is a door —', x: '15%', y: '70%', delay: 1.2 },
 ];
 
@@ -72,7 +72,7 @@ export default function Hero() {
             backgroundImage: 'linear-gradient(180deg, #FFFFFF 0%, #555555 100%)',
           }}
         >
-          AHMED
+          Ahmed Isam
         </motion.h1>
 
         {/* Subtitle */}
@@ -82,7 +82,7 @@ export default function Hero() {
           transition={{ delay: 0.5, duration: 1 }}
           className="text-center font-mono text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground mt-6"
         >
-          digital alchemist · visual poet · chaos architect
+          human · loves tech · Student(sometimes)
         </motion.p>
       </motion.div>
 
