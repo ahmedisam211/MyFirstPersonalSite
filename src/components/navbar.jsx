@@ -5,11 +5,12 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '#hero' },
+  { label: 'About', href: '#about' },
   { label: 'Projects', href: '#projects' },
   { label: 'Songs', href: '#songs' },
   { label: 'Links', href: '#links' },
   { label: 'Poems', href: '/poems', external: true },
-    { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {

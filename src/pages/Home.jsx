@@ -3,6 +3,7 @@ import CustomCursor from '../components/CustomcCursor';
 import Navbar from '../components/navbar';
 import ProgressBar from '../components/Progressbar';
 import Hero from '../sections/Hero';
+import About from '../sections/About';
 import Projects from '../sections/projects';
 import Songs from '../sections/songs';
 import Poems from '../sections/poems';
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
 
       <Hero />
+      <About />
       <Projects />
       <Songs />
       <Poems />
