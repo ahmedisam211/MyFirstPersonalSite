@@ -39,7 +39,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             data-hoverable
           >
-            A.
+            Ahmed
           </motion.button>
 
           {/* Desktop nav */}
