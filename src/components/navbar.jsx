@@ -7,9 +7,9 @@ const NAV_ITEMS = [
   { label: 'Home', href: '#hero' },
   { label: 'Projects', href: '#projects' },
   { label: 'Songs', href: '#songs' },
-  { label: 'Poems', href: '/poems', external: true },
   { label: 'Links', href: '#links' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Poems', href: '/poems', external: true },
+    { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {

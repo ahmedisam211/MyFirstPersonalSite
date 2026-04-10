@@ -84,7 +84,7 @@ export default function PoemsPage() {
           transition={{ delay: 0.1 }}
           className="font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground block mb-3"
         >
-          // a collection of digital verses
+          // a collection of poems you MUST read
         </motion.span>
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
