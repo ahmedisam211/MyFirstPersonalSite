@@ -18,7 +18,7 @@ function App() {
       </Router>
       <Toaster />
       <SpeedInsights />
-      </Analytics>
+      <Analytics/>
     </QueryClientProvider>
   )
 }
