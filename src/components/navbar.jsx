@@ -1,23 +1,32 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '#hero' },
   { label: 'Projects', href: '#projects' },
   { label: 'Songs', href: '#songs' },
-  { label: 'Poems', href: '#poems' },
+  { label: 'Poems', href: '/poems', external: true },
   { label: 'Links', href: '#links' },
   { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const scrollTo = (href) => {
+  const scrollTo = (href, external) => {
     setOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (external) { navigate(href); return; }
+    // If on home page, scroll to section; otherwise navigate to home with hash
+    if (location.pathname === '/') {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/' + href);
+    }
   };
 
   return (
@@ -30,7 +39,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             data-hoverable
           >
-            Ahmed
+            A.
           </motion.button>
 
           {/* Desktop nav */}
@@ -38,7 +47,7 @@ export default function Navbar() {
             {NAV_ITEMS.map((item) => (
               <motion.button
                 key={item.label}
-                onClick={() => scrollTo(item.href)}
+                onClick={() => scrollTo(item.href, item.external)}
                 className="text-white font-mono text-xs tracking-wider uppercase relative group"
                 whileHover={{ y: -2 }}
                 data-hoverable
@@ -76,7 +85,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.08 }}
-                onClick={() => scrollTo(item.href)}
+                onClick={() => scrollTo(item.href, item.external)}
                 className="text-white font-mono text-2xl tracking-wider uppercase"
                 data-hoverable
               >
