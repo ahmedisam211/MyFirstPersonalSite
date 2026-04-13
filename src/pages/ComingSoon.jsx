@@ -60,10 +60,10 @@ function FloatingBlob({ color, style }) {
   );
 }
 
-const SOCIAL_LINKS = [
+const SOCIAL_LINKS = [ 
   {
     label: 'GitHub',
-    href: 'https://github.com/ahmed',
+    href: 'https://github.com/ahmedisam211',
     icon: Github,
     color: 'hover:text-neon-lime hover:border-neon-lime/50',
     glow: 'hover:shadow-[0_0_20px_rgba(204,255,0,0.2)]',
@@ -71,7 +71,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/ahmed',
+    href: 'https://www.linkedin.com/in/ahmed-isam249 ',
     icon: Linkedin,
     color: 'hover:text-neon-cyan hover:border-neon-cyan/50',
     glow: 'hover:shadow-[0_0_20px_rgba(0,240,255,0.2)]',
@@ -79,7 +79,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: 'Instagram',
-    href: 'https://instagram.com/ahmed',
+    href: 'https://www.instagram.com/ahmed._isam/',
     icon: Instagram,
     color: 'hover:text-neon-magenta hover:border-neon-magenta/50',
     glow: 'hover:shadow-[0_0_20px_rgba(255,0,85,0.2)]',
