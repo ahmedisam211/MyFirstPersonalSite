@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import CustomCursor from '../components/CustomCursor';
-import NoiseOverlay from '../components/NoiseOverlay';
+import CustomCursor from '../components/CustomcCursor';
+import NoiseOverlay from '../components/Noiseoverlay';
 import { Github, Linkedin, Instagram } from 'lucide-react';
 
 const GLITCH_CHARS = '!<>-_\\/[]{}—=+*^?#@$%&';
@@ -140,7 +140,7 @@ export default function ComingSoon() {
           transition={{ duration: 0.6 }}
           className="font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground border border-border px-3 py-1"
         >
-          // ahmed's corner of the internet
+          // My corner of the internet
         </motion.span>
 
         {/* Main heading */}
@@ -215,7 +215,7 @@ export default function ComingSoon() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1 }}
-          className="font-mono text-[10px] text-muted-foreground/40 mt-4 max-w-xs"
+          className="font-mono text-[12px] text-muted-foreground/400 mt-4 max-w-x"
         >
           i'm building something cool here. or at least trying to. no cap.
         </motion.p>
