@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 // import { base44 } from '@/api/base44Client';
 import { useQuery } from '@tanstack/react-query';
-
+import CustomCursor from '../components/CustomcCursor';
 
 export default function PageNotFound({}) {
     const location = useLocation();
@@ -18,8 +18,9 @@ export default function PageNotFound({}) {
     //         }
     //     }
     // });
-    
+     
     return (
+        
         <div className="min-h-screen flex items-center justify-center p-6 bg-slate-50">
             <div className="max-w-md w-full">
                 <div className="text-center space-y-6">
@@ -53,6 +54,8 @@ export default function PageNotFound({}) {
                     </div>
                 </div>
             </div>
+            <CustomCursor />
         </div>
+        
     )
 }

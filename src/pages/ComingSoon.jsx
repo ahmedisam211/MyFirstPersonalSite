@@ -6,7 +6,7 @@ import { Github, Linkedin, Instagram } from 'lucide-react';
 
 const GLITCH_CHARS = '!<>-_\\/[]{}—=+*^?#@$%&';
 const PHRASES = [
-  "still cooking 🍳",
+  "still cooking...",
   "brb adding chaos",
   "almost done (lying)",
   "compiling vibes...",

@@ -67,10 +67,10 @@ export default function PoemsPage() {
       </div>
 
       {/* Ghost text decoration */}
-      <div className="fixed right-[-80px] top-1/2 -translate-y-1/2 pointer-events-none select-none">
+      <div className="fixed right-[20px] top-1/2 -translate-y-1/2 pointer-events-none select-none">
         <span className="text-[200px] font-black tracking-tighter text-white/[0.02] leading-none">
-          WORDS
-        </span>
+          كلمات وألحان
+        </span> 
       </div>
 
       <div className="relative z-10 px-6 md:px-10 py-24 md:py-32">
@@ -163,10 +163,10 @@ export default function PoemsPage() {
               </p>
 
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] text-muted-foreground">
+                <span className="font-mono text-[13px] text-muted-foreground">
                   by {poem.poet}
                 </span>
-                <span className="font-mono text-[10px] text-neon-cyan opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="font-mono text-[13px] text-neon-cyan opacity-0 group-hover:opacity-100 transition-opacity">
                   read →
                 </span>
               </div>
@@ -175,8 +175,8 @@ export default function PoemsPage() {
         </div>
       )}
       {/* Footer */}
-      <footer className="mt-32 py-8 border-t border-border/30 flex items-center justify-between font-mono text-[10px] text-muted-foreground/50">
-        <span>© AHMED {new Date().getFullYear()}</span>
+      <footer className="mt-32 py-8 border-t border-border/30 flex items-center justify-between font-mono text-[15px] text-muted-foreground/50">
+        <span>© Ahmed Isam {new Date().getFullYear()}</span>
         <span>crafted with controlled entropy</span>
       </footer>
       </div>

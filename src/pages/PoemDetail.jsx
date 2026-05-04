@@ -23,14 +23,18 @@ export default function PoemDetail() {
   if (!poem) {
     return (
       <main className="bg-onyx text-ash min-h-screen flex flex-col items-center justify-center gap-6">
-        <p className="font-mono text-muted-foreground">poem not found.</p>
-        <button
+        <p className="font-mono text-muted-foreground">What are you doing here</p>
+        <p className="font-mono text-muted-foreground">and poem not found.</p>
+        <motion.button
           onClick={() => navigate('/poems')}
+          whileHover={{ x: -4 }}
           className="font-mono text-xs text-neon-cyan uppercase tracking-widest"
-          data-hoverable
+          
         >
-          ← back to poems
-        </button>
+          
+          ← you should go back to poems
+        </motion.button>
+        <CustomCursor />
       </main>
     );
   }
@@ -82,6 +86,14 @@ export default function PoemDetail() {
         >
           by {poem.poet}
         </motion.p>
+          <motion.button
+            onClick={() => navigate('/poems')}
+            whileHover={{ x: -4 }}
+            className="font-mono text-[13px] uppercase tracking-widest text-muted-foreground hover:text-neon-cyan transition-colors"
+            data-hoverable
+          >
+            ← more poems
+          </motion.button>
 
         {/* Divider */}
         <motion.div
@@ -112,14 +124,15 @@ export default function PoemDetail() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
           className="mt-24 pt-8 border-t border-border/30 flex items-center justify-between"
+          data-hoverable
         >
-          <span className="font-mono text-[10px] text-muted-foreground/50">
+          <span className="font-mono text-[14px] text-muted-foreground/50 hover:text-neon-cyan">
             © {poem.poet} — all words reserved
           </span>
           <motion.button
             onClick={() => navigate('/poems')}
             whileHover={{ x: -4 }}
-            className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground hover:text-neon-cyan transition-colors"
+            className="font-mono text-[14px] uppercase tracking-widest text-muted-foreground hover:text-neon-cyan transition-colors"
             data-hoverable
           >
             ← more poems
