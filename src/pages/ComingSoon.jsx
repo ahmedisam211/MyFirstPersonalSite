@@ -10,7 +10,7 @@ const PHRASES = [
   "brb adding chaos",
   "almost done (lying)",
   "compiling vibes...",
-  "loading ahmed.exe",
+  "loading Ahmed.exe",
   "syntax error: life",
   "git push --force",
 ];
@@ -67,7 +67,7 @@ const SOCIAL_LINKS = [
     icon: Github,
     color: 'hover:text-neon-lime hover:border-neon-lime/50',
     glow: 'hover:shadow-[0_0_20px_rgba(204,255,0,0.2)]',
-    tag: '// code',
+    tag: '// codes',
   },
   {
     label: 'LinkedIn',
@@ -182,14 +182,14 @@ export default function ComingSoon() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="w-32 h-px bg-gradient-to-r from-neon-cyan via-neon-lime to-neon-magenta origin-left"
+          className="w-48 h-px bg-gradient-to-r from-neon-cyan via-neon-lime to-neon-magenta origin-left"
         />
 
         {/* Social links */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 0.8}}
           className="flex flex-col sm:flex-row gap-3 mt-2"
         >
           {SOCIAL_LINKS.map(({ label, href, icon: Icon, color, glow, tag }) => (
@@ -217,7 +217,7 @@ export default function ComingSoon() {
           transition={{ delay: 1.1 }}
           className="font-mono text-[12px] text-muted-foreground/400 mt-4 max-w-x"
         >
-          i'm building something cool here. or at least trying to. no cap.
+          i'm building something cool here. or at least trying to. 
         </motion.p>
       </div>
     </main>

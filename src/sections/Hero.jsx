@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const HERO_IMAGE = 'https://media.base44.com/images/public/69d7a4a08ccfaa93b4238ed5/86f40c7bb_generated_c414add4.png';
+const HERO_IMAGE = '../assets/bg.png';
 
 const poeticFragments = [
   { text: 'somewhere between', x: '5%', y: '25%', delay: 0.6 },
