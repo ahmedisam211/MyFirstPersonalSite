@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CustomCursor from '../components/CustomcCursor';
 import NoiseOverlay from '../components/Noiseoverlay';
-import { Github, Linkedin, Instagram } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 
 const GLITCH_CHARS = '!<>-_\\/[]{}—=+*^?#@$%&';
 const PHRASES = [
@@ -61,6 +61,14 @@ function FloatingBlob({ color, style }) {
 }
 
 const SOCIAL_LINKS = [ 
+  {
+    label: 'Email',
+    href: 'mailto:ahmdsamth@gmail.com',
+    icon: Mail,
+    color: 'hover:text-neon-magenta hover:border-neon-magenta/50',
+    glow: 'hover:shadow-[0_0_20px_rgba(0,240,255,0.2)]',
+    tag: '//big talk',
+  },
   {
     label: 'GitHub',
     href: 'https://github.com/ahmedisam211',
