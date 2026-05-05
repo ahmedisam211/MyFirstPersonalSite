@@ -16,7 +16,7 @@ function App() {
     <QueryClientProvider client={queryClientInstance}>
       <Router >
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<ComingSoon />} />
           <Route path="/home" element={<Home />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="/poems" element={<PoemsPage />} />
