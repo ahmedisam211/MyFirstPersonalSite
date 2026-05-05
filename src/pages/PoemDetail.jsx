@@ -5,6 +5,7 @@ import Navbar from '../components/navbar';
 import NoiseOverlay from '../components/Noiseoverlay';
 import ProgressBar from '../components/Progressbar';
 import CustomCursor from '../components/CustomcCursor';
+import React, { useState } from 'react';
 
 const accentMap = {
   digital: { heading: 'text-neon-cyan', bar: 'bg-neon-cyan' },
@@ -15,30 +16,59 @@ const accentMap = {
   distance: { heading: 'text-neon-magenta', bar: 'bg-neon-magenta' },
 };
 
+
+
 export default function PoemDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const poem = POEMS.find((p) => p.id === id);
+  
+
+  const [runCount, setRunCount] = useState(0);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  
+  const handleMouseEnter = () => {
+    if (runCount < 3) {
+
+      const minJump = 150;
+      const maxJump = 300;
+      const randomX = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * (maxJump - minJump) + minJump);
+      const randomY = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * (maxJump - minJump) + minJump);
+      
+      setPosition({ x: randomX, y: randomY });
+      setRunCount(prev => prev + 1);
+    }
+  };
 
   if (!poem) {
     return (
-      <main className="bg-onyx text-ash min-h-screen flex flex-col items-center justify-center gap-6">
+      <main className="bg-onyx text-ash min-h-screen flex flex-col items-center justify-center gap-6 overflow-hidden">
         <p className="font-mono text-muted-foreground">What are you doing here</p>
         <p className="font-mono text-muted-foreground">and poem not found.</p>
+        
         <motion.button
-          onClick={() => navigate('/poems')}
-          whileHover={{ x: -4 }}
-          className="font-mono text-xs text-neon-cyan uppercase tracking-widest"
-          
+          onMouseEnter={handleMouseEnter}
+          animate={{ x: position.x, y: position.y }}
+          onClick={() => {
+            if (runCount >= 3) navigate('/poems');
+          }}
+          // Logic for when it stops running
+          whileHover={runCount >= 3 ? { scale: 1.1, } : {}}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className={`font-mono text-xs uppercase tracking-widest transition-colors duration-300 px-4 py-2 border ${
+            runCount < 3 
+              ? 'text-ash/40 border-transparent cursor-default' 
+              : 'text-neon-cyan border-neon-cyan/30 '
+          }`}
         >
-          
-          ← you should go back to poems
+          {runCount < 3 ? "Try to catch me" : "← you should go back"}
         </motion.button>
+        
         <CustomCursor />
       </main>
     );
   }
-
   const accent = accentMap[poem.tag] || { heading: 'text-neon-cyan', bar: 'bg-neon-cyan' };
 
   return (
