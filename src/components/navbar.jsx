@@ -22,11 +22,11 @@ export default function Navbar() {
     setOpen(false);
     if (external) { navigate(href); return; }
     // If on home page, scroll to section; otherwise navigate to home with hash
-    if (location.pathname === '/') {
+    if (location.pathname === '/home') {
       const el = document.querySelector(href);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else {
-      navigate('/' + href);
+      navigate('/home' + href);
     }
   };
 
