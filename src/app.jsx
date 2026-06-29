@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/react"
 import PoemsPage from './pages/PoemsPage';
 import PoemDetail from './pages/PoemDetail';
 import ComingSoon from './pages/ComingSoon';
+import MoreSongs from './pages/MoreSongs';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="/poems" element={<PoemsPage />} />
           <Route path="/poems/:id" element={<PoemDetail />} />
+          <Route path="/more-songs" element={<MoreSongs />} />
         </Routes>
       </Router>
       <Toaster />
