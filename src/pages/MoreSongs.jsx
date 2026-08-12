@@ -14,7 +14,7 @@ const ALL_SONGS = [
   { id: '05', title: 'Signal Lost', singer: 'Hameed', mood: 'Ambient', duration: '3:47', color: 'text-ash/40', bg: 'bg-ash/40', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3', cover: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80' },
   { id: '06', title: 'Digital Echo', singer: 'Poet Y', mood: 'Atmospheric', duration: '4:22', color: 'text-neon-violet', bg: 'bg-neon-violet', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3', cover: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80' },
   { id: '07', title: 'Cyber Pulse', singer: 'mostafa', mood: 'Energetic', duration: '3:15', color: 'text-neon-magenta', bg: 'bg-neon-magenta', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3', cover: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&q=80' },
-  { id: '08', title: 'Vapor Wave', singer: 'Hameed', mood: 'Chill', duration: '5:45', color: 'text-neon-cyan', bg: 'bg-neon-cyan', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3', cover: 'https://images.unsplash.com/photo-1496293455970-f8581aae0e3c?w=800&q=80' },
+  { id: '08', title: 'Vapor Wave', singer: 'Hameed', mood: 'Chill', duration: '5:45', color: 'text-neon-cyan', bg: 'bg-neon-cyan', url: 'https://cdn.hackclub.com/019f10ba-a182-7a0c-afd8-f067a820905d/%D8%A5%D9%84%D8%A7%20%D9%86%D9%88%D8%B1%D9%8A%20%D8%A7%D9%84%D9%81%D9%8A%D9%87%D8%A7%20%D8%A3%D9%83%D8%AA%D8%B1.mp3', cover: 'https://images.unsplash.com/photo-1496293455970-f8581aae0e3c?w=800&q=80' },
 ];
 
 const SINGERS = ['All', ...new Set(ALL_SONGS.map(s => s.singer))];
