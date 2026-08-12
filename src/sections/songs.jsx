@@ -1,22 +1,25 @@
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Play, Pause } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 
 const SONGS = [
-  { id: '01', title: 'Midnight Static', mood: 'Dreamy', duration: '3:34', color: 'bg-neon-violet' },
-  { id: '02', title: 'Broken Frequencies', mood: 'Chaotic', duration: '4:11', color: 'bg-neon-magenta' },
-  { id: '03', title: 'Ghost in the Wire', mood: 'Melancholic', duration: '2:58', color: 'bg-neon-cyan' },
-  { id: '04', title: 'Neon Rain', mood: 'Euphoric', duration: '5:02', color: 'bg-neon-lime' },
+  { id: '01', title: 'Midnight Static', mood: 'Dreamy', duration: '3:34', color: 'bg-neon-violet', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' },
+  { id: '02', title: 'Broken Frequencies', mood: 'Chaotic', duration: '4:11', color: 'bg-neon-magenta', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3' },
+  { id: '03', title: 'Ghost in the Wire', mood: 'Melancholic', duration: '2:58', color: 'bg-neon-cyan', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3' },
+  { id: '04', title: 'Neon Rain', mood: 'Euphoric', duration: '5:02', color: 'bg-neon-lime', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' },
 ];
 
-function SongRow({ song, index }) {
+function SongRow({ song, index, isPlaying, onToggle }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group flex items-center py-6 border-b border-ash/10 hover:bg-ash/5 transition-colors px-4 -mx-4"
+      className="group flex items-center py-6 border-b border-ash/10 hover:bg-ash/5 transition-colors px-4 -mx-4 cursor-pointer"
+      onClick={onToggle}
     >
       <span className="font-mono text-xs text-ash/40 w-12">{song.id}</span>
       
@@ -33,11 +36,19 @@ function SongRow({ song, index }) {
       </div>
 
       <div className="flex items-center gap-8">
+        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-ash/5 group-hover:bg-ash/10 transition-colors">
+          {isPlaying ? (
+            <Pause className="w-4 h-4 text-neon-magenta fill-current" />
+          ) : (
+            <Play className="w-4 h-4 text-ash/40 group-hover:text-white fill-current ml-0.5" />
+          )}
+        </div>
+        
         <div className="hidden md:flex gap-0.5 items-end h-3">
           {[1, 2, 3, 4, 5].map((i) => (
             <motion.div
               key={i}
-              animate={{ height: [4, 12, 6, 10, 4] }}
+              animate={isPlaying ? { height: [4, 12, 6, 10, 4] } : { height: 4 }}
               transition={{ 
                 repeat: Infinity, 
                 duration: 1 + Math.random(),
@@ -54,6 +65,20 @@ function SongRow({ song, index }) {
 }
 
 export default function Songs() {
+  const [playingSongId, setPlayingSongId] = useState(null);
+  const audioRef = useRef(new Audio());
+
+  const togglePlay = (song) => {
+    if (playingSongId === song.id) {
+      audioRef.current.pause();
+      setPlayingSongId(null);
+    } else {
+      audioRef.current.src = song.url;
+      audioRef.current.play();
+      setPlayingSongId(song.id);
+    }
+  };
+
   return (
     <section id="songs" className="relative px-6 md:px-10 py-24 md:py-32">
       <SectionHeading color="text-neon-magenta">Songs</SectionHeading>
@@ -64,7 +89,13 @@ export default function Songs() {
 
       <div className="mt-12 w-full max-w-5xl">
         {SONGS.map((song, i) => (
-          <SongRow key={song.id} song={song} index={i} />
+          <SongRow 
+            key={song.id} 
+            song={song} 
+            index={i} 
+            isPlaying={playingSongId === song.id}
+            onToggle={() => togglePlay(song)}
+          />
         ))}
       </div>
 
@@ -75,7 +106,7 @@ export default function Songs() {
         className="mt-16"
       >
         <Link 
-          to="/more-songs"
+          to="/songs"
           className="inline-flex items-center gap-4 group"
         >
           <span className="text-xs font-mono tracking-[0.3em] uppercase text-ash/60 group-hover:text-neon-magenta transition-colors">

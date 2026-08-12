@@ -20,13 +20,13 @@ export default function About() {
             className="space-y-6 text-ash/80 font-sans text-lg md:text-xl leading-relaxed"
           >
             <p>
-              I am <span className="text-white font-bold">Ahmed Isam</span>, a teenager exploring the intersection of technology and art. My work spans across software development, visual design, and poetic expression.
+              Hi! i am <span className="text-white font-bold">Ahmed</span>, a teenager exploring the intersection of technology and art. I love to build stuff. Software, hardware or anything that is fun to build.
             </p>
             <p>
-              Driven by a fascination with how code can manifest as emotion, I build digital experiences that are not just functional, but resonant. Whether it's through a line of code, a verse of poetry, or a visual composition, I strive to create moments of connection in the digital void.
+              I love anything artsy, and i want to explore the different culturs and listn to all the music in the world. i am currently exploring sudanese music and poetry and trying to a collect what i can to make it accessable for the world.
             </p>
             <div className="pt-4 flex flex-wrap gap-4">
-              {['Sudanese', 'not a developer', 'i try to code', 'CAD', 'Robotics', 'Music'].map((skill) => (
+              {['Sudanese', 'developer (allegedly)', 'learning  Oud', 'CAD', 'Robotics', 'Music', 'poetry','anti-wars',''].map((skill) => (
                 <span 
                   key={skill}
                   className="px-3 py-1 border border-neon-cyan/30 rounded-full text-xs font-mono text-neon-cyan uppercase tracking-widest bg-neon-cyan/5"

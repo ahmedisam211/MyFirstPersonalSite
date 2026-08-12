@@ -4,13 +4,12 @@ import { Menu, X } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const NAV_ITEMS = [
-  { label: 'Home', href: '#hero' },
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Songs', href: '#songs' },
-  { label: 'Links', href: '#links' },
-  { label: 'Poems', href: '/poems', external: true },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '#hero', type: 'scroll' },
+  // { label: 'Projects', href: '#projects', type: 'scroll' },
+  { label: 'Songs', href: '#songs', type: 'scroll' },
+  { label: 'Poems', href: '#poems', type: 'scroll' },
+  { label: 'Links', href: '#links', type: 'scroll' },
+  { label: 'Contact', href: '#contact', type: 'scroll' },
 ];
 
 export default function Navbar() {
@@ -18,15 +17,23 @@ export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const scrollTo = (href, external) => {
+  const handleNav = (item) => {
     setOpen(false);
-    if (external) { navigate(href); return; }
-    // If on home page, scroll to section; otherwise navigate to home with hash
-    if (location.pathname === '/home') {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    
+    if (item.type === 'link') {
+      navigate(item.href);
     } else {
-      navigate('/home' + href);
+      // If we're not on the home page, go home first then scroll
+      if (location.pathname !== '/home') {
+        navigate('/home');
+        setTimeout(() => {
+          const el = document.querySelector(item.href);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        const el = document.querySelector(item.href);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -35,7 +42,7 @@ export default function Navbar() {
       <nav className="fixed top-0 left-0 right-0 z-40 mix-blend-difference">
         <div className="flex items-center justify-between px-6 py-4 md:px-10">
           <motion.button
-            onClick={() => scrollTo('#hero')}
+            onClick={() => handleNav({ type: 'scroll', href: '#hero' })}
             className="text-white font-mono text-sm tracking-widest uppercase"
             whileHover={{ scale: 1.05 }}
             data-hoverable
@@ -48,7 +55,7 @@ export default function Navbar() {
             {NAV_ITEMS.map((item) => (
               <motion.button
                 key={item.label}
-                onClick={() => scrollTo(item.href, item.external)}
+                onClick={() => handleNav(item)}
                 className="text-white font-mono text-xs tracking-wider uppercase relative group"
                 whileHover={{ y: -2 }}
                 data-hoverable
@@ -86,7 +93,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.08 }}
-                onClick={() => scrollTo(item.href, item.external)}
+                onClick={() => handleNav(item)}
                 className="text-white font-mono text-2xl tracking-wider uppercase"
                 data-hoverable
               >

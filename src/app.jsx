@@ -22,7 +22,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="/poems" element={<PoemsPage />} />
           <Route path="/poems/:id" element={<PoemDetail />} />
-          <Route path="/more-songs" element={<MoreSongs />} />
+          <Route path="/songs" element={<MoreSongs />} />
         </Routes>
       </Router>
       <Toaster />

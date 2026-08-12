@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const HERO_IMAGE = '../assets/bg.png';
+const HERO_IMAGE = 'https://cdn.hackclub.com/019f1591-62d4-7cd1-b04d-fa1b0286b54f/514264561_1915952835806863_7714271270130506496_n.jpg';
 
 const poeticFragments = [
   { text: 'somewhere between', x: '5%', y: '25%', delay: 0.6 },
