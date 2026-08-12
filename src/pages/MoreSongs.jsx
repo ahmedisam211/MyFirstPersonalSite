@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Play, Pause, SkipBack, SkipForward, Volume2, ArrowLeft, Music, Disc } from 'lucide-react';
 import NoiseOverlay from '../components/Noiseoverlay';
-import CustomCursor from '../components/customcCursor';
+import CustomCursor from '../components/CustomcCursor';
 import Navbar from '../components/navbar';
 
 const ALL_SONGS = [
